@@ -4,7 +4,7 @@ export const NavWrap = styled.div`
   & a {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
       'Lucida Sans', Arial, sans-serif;
-    background: #64686c;
+    background: #bec5cc;
     border: none;
     border-radius: 1rem;
     color: #ef4623;
