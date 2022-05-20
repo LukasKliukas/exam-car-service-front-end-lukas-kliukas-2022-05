@@ -10,9 +10,10 @@ export const NavWrap = styled.div`
     color: #ef4623;
     padding: 0.5rem 1rem;
     text-decoration: none;
+    font-weight: bold;
     cursor: pointer;
     :hover {
-      background: #fbd0c7;
+      background: #ef4623;
       box-shadow: 2px 2px 2px #64686c;
       color: #2c343c;
     }
@@ -23,7 +24,8 @@ export const NavWrap = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: 2px solid #64686c;
+  border: 2px solid #2c343c;
   margin: 0 auto;
   max-width: 60rem;
+  background: #2c343c;
 `;
