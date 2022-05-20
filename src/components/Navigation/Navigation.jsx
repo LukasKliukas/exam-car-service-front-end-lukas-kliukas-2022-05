@@ -9,6 +9,7 @@ const Navigation = () => {
       <img src={logo} alt='logo'></img>
       <Link to='/'>Home</Link>
       <Link to='/cars'>All Cars</Link>
+      <Link to='/addCar'>Add a car</Link>
     </S.NavWrap>
   );
 };
