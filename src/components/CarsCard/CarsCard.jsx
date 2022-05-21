@@ -8,8 +8,8 @@ const CarsCard = (props) => {
     <S.CarWrapper>
       <S.CarBrand>{props.brand}</S.CarBrand>
       <S.CarModel>{props.model}</S.CarModel>
-      <S.CarNumber>{props.number}</S.CarNumber>
       <S.CarYear>{props.year}</S.CarYear>
+      <S.CarNumber>{props.number}</S.CarNumber>
       <S.CarOwner>{props.owner}</S.CarOwner>
       <S.CarPhone>{props.phone}</S.CarPhone>
       <Button>X</Button>
