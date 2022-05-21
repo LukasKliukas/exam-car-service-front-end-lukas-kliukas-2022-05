@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import { Button } from './components/Button/Button.style';
 import Navigation from './components/Navigation/Navigation';
 import AddCar from './pages/AddCar/AddCar';
 import Home from './pages/Home/Home';
@@ -14,7 +13,6 @@ function App() {
         <Route path='/cars' element={<h1>All cars</h1>} />
         <Route path='/addCar' element={<AddCar />} />
       </Routes>
-      <Button>Hello</Button>
     </div>
   );
 }
