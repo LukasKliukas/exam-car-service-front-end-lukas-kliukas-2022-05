@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Input from '../../components/Input/Input';
 import Wrapper from '../../components/Wrapper/Wrapper';
 import Button from '../../components/Button/Button';
+import * as S from './AddCar.style';
 
 const token = localStorage.getItem('token');
 

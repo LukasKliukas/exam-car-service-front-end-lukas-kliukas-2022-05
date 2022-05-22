@@ -24,8 +24,10 @@ export const NavWrap = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: 2px solid #2c343c;
   margin: 0 auto;
   max-width: 60rem;
-  background: #2c343c;
+  background: #64686c;
+`;
+export const NavigationHolder = styled.div`
+  background: #64686c;
 `;
