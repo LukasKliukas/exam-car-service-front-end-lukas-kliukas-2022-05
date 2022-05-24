@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import * as S from './Home.style';
 import CarsList from './../../components/CarsList/CarsList';
+import Footer from '../../components/Footer/Footer';
 
 const getData = async () => {
   try {
@@ -37,7 +38,7 @@ const Home = (props) => {
           <S.SectionRight></S.SectionRight>
         </S.Wrapper>
       </S.Background>
-      ;
+      <Footer />
     </>
   );
 };
