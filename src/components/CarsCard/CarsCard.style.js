@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const CarWrapper = styled.div`
   background-color: #bec5cc;
   border-radius: 1rem;
-  border: 0.5rem solid #ef4623;
+  border: 0.5rem solid #fff;
   color: #2c343c;
   padding: 0.5rem;
   text-align: center;
