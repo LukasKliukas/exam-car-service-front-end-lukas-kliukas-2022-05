@@ -8,7 +8,8 @@ const Navigation = () => {
     <S.NavigationHolder>
       <S.NavWrap>
         <img src={logo} alt='logo'></img>
-        <Link to='/'>Home</Link>
+        <Link to='/'>Register</Link>
+        <Link to='/login'>Login</Link>
         <Link to='/cars'>All Cars</Link>
         <Link to='/addCar'>Add A Car</Link>
       </S.NavWrap>
