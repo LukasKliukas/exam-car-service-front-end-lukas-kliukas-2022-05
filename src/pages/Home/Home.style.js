@@ -8,8 +8,10 @@ export const Wrapper = styled.div`
   height: 50rem;
 `;
 export const SectionLeft = styled.div``;
-export const SectionRight = styled.div`
+export const SectionRight = styled.div``;
+export const Background = styled.div`
   background-image: url('https://www.pngall.com/wp-content/uploads/11/Tuning-Car-PNG-Photo.png');
-  background-size: 80%;
+  background-size: cover;
   background-repeat: no-repeat;
+  height: 100vh;
 `;

@@ -29,12 +29,14 @@ const Home = (props) => {
 
   return (
     <>
-      <S.Wrapper>
-        <S.SectionLeft>
-          <CarsList data={data} />
-        </S.SectionLeft>
-        <S.SectionRight>Right</S.SectionRight>
-      </S.Wrapper>
+      <S.Background>
+        <S.Wrapper>
+          <S.SectionLeft>
+            <CarsList data={data} />
+          </S.SectionLeft>
+          <S.SectionRight></S.SectionRight>
+        </S.Wrapper>
+      </S.Background>
       ;
     </>
   );
