@@ -1,7 +1,12 @@
 import React from 'react';
+import * as S from './Footer.style';
 
 const Footer = () => {
-  return <div>Footer</div>;
+  return (
+    <S.FooterWrapper>
+      <S.FooterTitle>All rights reserved &copy; 2022 Lukas K.</S.FooterTitle>
+    </S.FooterWrapper>
+  );
 };
 
 export default Footer;
