@@ -17,6 +17,7 @@ const CarsList = ({ data }) => {
               number={car.number}
               owner={car.owner}
               phone={car.phone}
+              id={car.id}
             />
           ))}
       </S.CarsGrid>
