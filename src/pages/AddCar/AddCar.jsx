@@ -5,6 +5,7 @@ import Button from '../../components/Button/Button';
 import * as S from './AddCar.style';
 import Title from '../../components/Title/Title';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../../components/Footer/Footer';
 
 const token = localStorage.getItem('token');
 
@@ -74,64 +75,67 @@ const AddCar = (props) => {
   }
 
   return (
-    <S.Background>
-      <Wrapper>
-        <Title>Add a new Car :</Title>
-        {popUpInfo.length > 0 ? <S.InfoPopUp>{popUpInfo}</S.InfoPopUp> : ''}
-        <form onSubmit={submitHandler}>
-          {message && <h2>{message}</h2>}
-          <Input
-            label='Add a car brand name :'
-            name='brand'
-            type='text'
-            placeholder='Enter here'
-            handleChange={(value) => setBrand(value)}
-            initialValue={brand}
-          />
-          <Input
-            label='Add a car model :'
-            name='model'
-            type='text'
-            placeholder='Enter here'
-            handleChange={(value) => setModel(value)}
-            value={model}
-          />
-          <Input
-            label='Add a year of a car :'
-            name='year'
-            type='text'
-            placeholder='Enter here'
-            handleChange={(value) => setYear(value)}
-            value={year}
-          />
-          <Input
-            label='Add a car number plate :'
-            name='number'
-            type='text'
-            placeholder='Enter here'
-            handleChange={(value) => setNumber(value)}
-            value={number}
-          />
-          <Input
-            label='Add a car owner name and surname :'
-            name='owner'
-            type='text'
-            placeholder='Enter here'
-            handleChange={(value) => setOwner(value)}
-            value={owner}
-          />
-          <Input
-            label='Add a car owner phone number :'
-            name='phone'
-            type='text'
-            placeholder='Enter here'
-            handleChange={(value) => setPhone(value)}
-            value={phone}
-          />
-          <Button type='submit'>Submit</Button>
-        </form>
-      </Wrapper>
-    </S.Background>
+    <>
+      <S.Background>
+        <Wrapper>
+          <Title>Add a new Car :</Title>
+          {popUpInfo.length > 0 ? <S.InfoPopUp>{popUpInfo}</S.InfoPopUp> : ''}
+          <form onSubmit={submitHandler}>
+            {message && <h2>{message}</h2>}
+            <Input
+              label='Add a car brand name :'
+              name='brand'
+              type='text'
+              placeholder='Enter here'
+              handleChange={(value) => setBrand(value)}
+              initialValue={brand}
+            />
+            <Input
+              label='Add a car model :'
+              name='model'
+              type='text'
+              placeholder='Enter here'
+              handleChange={(value) => setModel(value)}
+              value={model}
+            />
+            <Input
+              label='Add a year of a car :'
+              name='year'
+              type='text'
+              placeholder='Enter here'
+              handleChange={(value) => setYear(value)}
+              value={year}
+            />
+            <Input
+              label='Add a car number plate :'
+              name='number'
+              type='text'
+              placeholder='Enter here'
+              handleChange={(value) => setNumber(value)}
+              value={number}
+            />
+            <Input
+              label='Add a car owner name and surname :'
+              name='owner'
+              type='text'
+              placeholder='Enter here'
+              handleChange={(value) => setOwner(value)}
+              value={owner}
+            />
+            <Input
+              label='Add a car owner phone number :'
+              name='phone'
+              type='text'
+              placeholder='Enter here'
+              handleChange={(value) => setPhone(value)}
+              value={phone}
+            />
+            <Button type='submit'>Submit</Button>
+          </form>
+        </Wrapper>
+      </S.Background>
+      <Footer />
+    </>
   );
 };
 
