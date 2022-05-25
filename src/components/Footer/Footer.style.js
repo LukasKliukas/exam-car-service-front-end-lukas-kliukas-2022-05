@@ -10,6 +10,6 @@ export const FooterWrapper = styled.div`
   width: 100%;
 `;
 
-export const FooterTitle = styled.h2`
+export const FooterTitle = styled.h4`
   margin: 0.25rem auto;
 `;
