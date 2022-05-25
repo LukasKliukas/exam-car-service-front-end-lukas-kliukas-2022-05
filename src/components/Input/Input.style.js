@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const InputControl = styled.div`
   max-width: 30rem;
-  color: #ef4623;
+  color: #2c343c;
   background: #bec5cc;
   border-radius: 0.5rem;
   padding-left: 0.2rem;
@@ -31,7 +31,7 @@ export const Input = styled.input`
     color: rgba(0, 0, 0, 0.2);
   }
   :focus {
-    border-color: #ef4623;
+    border-color: #2c343c;
     transition: border-color 1s;
     outline: 0;
   }
