@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button/Button';
+import Footer from '../../components/Footer/Footer';
 import Input from '../../components/Input/Input';
 import Title from '../../components/Title/Title';
 import Wrapper from '../../components/Wrapper/Wrapper';
+import * as S from './Login.style';
 
 const loginUrl = `${process.env.REACT_APP_SERVER_URL}/auth/login `;
 
@@ -58,34 +60,39 @@ const Login = () => {
     return false;
   }
   return (
-    <Wrapper>
-      <Title>Login with your created user :</Title>
-      {isError && <h3>Please check the form ! Incorrect data sent</h3>}
-      {errorMsg.length > 0 ? (
-        <h3>Please check the form ! Incorrect data sent</h3>
-      ) : (
-        ''
-      )}
-      <form onSubmit={submitHandler}>
-        <Input
-          label='Add your email :'
-          name='email'
-          type='email'
-          placeholder='Enter here'
-          handleChange={(value) => setEmail(value)}
-          initialValue={email}
-        />
-        <Input
-          label='Add your password :'
-          name='password'
-          type='password'
-          placeholder='Enter here'
-          handleChange={(value) => setPassword(value)}
-          initialValue={password}
-        />
-        <Button type='submit'>Submit</Button>
-      </form>
-    </Wrapper>
+    <>
+      <S.Background>
+        <Wrapper>
+          <Title>Login with your created user :</Title>
+          {isError && <h3>Please check the form ! Incorrect data sent</h3>}
+          {errorMsg.length > 0 ? (
+            <h3>Please check the form ! Incorrect data sent</h3>
+          ) : (
+            ''
+          )}
+          <form onSubmit={submitHandler}>
+            <Input
+              label='Add your email :'
+              name='email'
+              type='email'
+              placeholder='Enter here'
+              handleChange={(value) => setEmail(value)}
+              initialValue={email}
+            />
+            <Input
+              label='Add your password :'
+              name='password'
+              type='password'
+              placeholder='Enter here'
+              handleChange={(value) => setPassword(value)}
+              initialValue={password}
+            />
+            <Button type='submit'>Submit</Button>
+          </form>
+        </Wrapper>
+      </S.Background>
+      <Footer />
+    </>
   );
 };
 
