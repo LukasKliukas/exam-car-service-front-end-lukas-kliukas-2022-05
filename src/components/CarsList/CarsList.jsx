@@ -3,7 +3,6 @@ import CarsCard from './../CarsCard/CarsCard';
 import * as S from './CarsList.style';
 
 const CarsList = ({ data }) => {
-  console.log(data);
   if (data.length > 0) {
     return (
       <S.CarsGrid>
