@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Navigation from './components/Navigation/Navigation';
+import NotLogedIn from './components/NotLogedIn/NotLogedIn';
 import Wrapper from './components/Wrapper/Wrapper';
 import AddCar from './pages/AddCar/AddCar';
 import Home from './pages/Home/Home';
@@ -10,6 +11,7 @@ import Register from './pages/Register/Register';
 import AuthContext from './store/authContext';
 
 function App() {
+  const gotToken = localStorage.getItem('token');
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
   function login() {
@@ -33,8 +35,11 @@ function App() {
         <Routes>
           <Route path='/' element={<Register />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/cars' element={<Home />} />
-          <Route path='/addCar' element={<AddCar />} />
+          <Route path='/cars' element={gotToken ? <Home /> : <NotLogedIn />} />
+          <Route
+            path='/addCar'
+            element={gotToken ? <AddCar /> : <NotLogedIn />}
+          />
           <Route
             path='*'
             element={
