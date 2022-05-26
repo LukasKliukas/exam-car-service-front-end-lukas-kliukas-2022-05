@@ -31,7 +31,7 @@ function App() {
   return (
     <AuthContext.Provider value={ctxValue}>
       <div className='App'>
-        <Navigation />
+        <Navigation token={gotToken} />
         <Routes>
           <Route path='/' element={<Register />} />
           <Route path='/login' element={<Login />} />
