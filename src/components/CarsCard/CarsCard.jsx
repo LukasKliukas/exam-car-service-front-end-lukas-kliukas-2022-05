@@ -42,7 +42,9 @@ const CarsCard = (props) => {
         <S.CarNumber>{props.number}</S.CarNumber>
         <S.CarOwner>{props.owner}</S.CarOwner>
         <S.CarPhone>{props.phone}</S.CarPhone>
-        <Button handleClick={() => handleDelete(props.id)}>X</Button>
+        <Button handleClick={() => handleDelete(props.id)}>
+          <i class='icon fa fa-trash-o' aria-hidden='true'></i>
+        </Button>
       </S.CarWrapper>
     );
   } else {
