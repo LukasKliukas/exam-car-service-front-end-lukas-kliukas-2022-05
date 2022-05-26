@@ -31,7 +31,13 @@ const AddCar = (props) => {
       year: year,
     };
     if (isThereErrors(newPostObj)) {
-      alert('All fields are required !');
+      alert('All fields are required to fill !');
+      setBrand('');
+      setModel('');
+      setYear('');
+      setNumber('');
+      setOwner('');
+      setPhone('');
       return;
     }
     const resp = await fetch(`${process.env.REACT_APP_SERVER_URL}/cars`, {
@@ -43,9 +49,12 @@ const AddCar = (props) => {
       body: JSON.stringify(newPostObj),
     });
     const atsInJs = await resp.json();
-
-    if (atsInJs.msg) {
+    console.log(atsInJs);
+    if (atsInJs.affectedRows > 0) {
       setMessage(atsInJs.msg);
+      setTimeout(function () {
+        navigate('/cars');
+      }, 2000);
     }
     if (atsInJs.err) {
       setMessage(atsInJs.err);
@@ -55,9 +64,6 @@ const AddCar = (props) => {
   function submitHandler(e) {
     e.preventDefault();
     sendPostFetch();
-    setTimeout(function () {
-      navigate('/cars');
-    }, 2000);
 
     // window.location.reload();
   }
@@ -71,7 +77,6 @@ const AddCar = (props) => {
     const ourKeys = Object.keys(dataToCheck);
     const allKeys = mustBeKeys.filter((mustKey) => !ourKeys.includes(mustKey));
     if (valuesBool.length > 0 || allKeys.length > 0) {
-      console.log('Not all data written to a form');
       return true;
     }
     return false;
