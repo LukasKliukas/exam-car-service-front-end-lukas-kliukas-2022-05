@@ -13,7 +13,7 @@ const Button = ({ handleClick, children, color, type }) => {
 Button.propTypes = {
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
   handleClick: PropTypes.func,
-  children: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
   color: PropTypes.string.isRequired,
 };
 
