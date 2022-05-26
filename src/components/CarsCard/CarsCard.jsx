@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import * as S from './CarsCard.style';
 import Button from './../Button/Button';
 import Title from '../Title/Title';
 import { useNavigate } from 'react-router-dom';
+import AuthContext from '../../store/authContext';
 
 const CarsCard = (props) => {
+  const authCtx = useContext(AuthContext);
   let navigate = useNavigate();
 
   function handleDelete(id) {
     deleteFetch(id);
     window.location.reload();
+    authCtx.login();
   }
 
   async function deleteFetch(id) {

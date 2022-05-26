@@ -43,7 +43,6 @@ const AddCar = (props) => {
       body: JSON.stringify(newPostObj),
     });
     const atsInJs = await resp.json();
-    console.log('atsInJs ===', atsInJs);
 
     if (atsInJs.msg) {
       setMessage(atsInJs.msg);
@@ -51,11 +50,15 @@ const AddCar = (props) => {
     if (atsInJs.err) {
       setMessage(atsInJs.err);
     }
-    setPopUpInfo('Car succesefully created !');
+    setPopUpInfo('Car was succesefully created !');
   }
   function submitHandler(e) {
     e.preventDefault();
     sendPostFetch();
+    setTimeout(function () {
+      navigate('/cars');
+    }, 2000);
+
     // window.location.reload();
   }
 

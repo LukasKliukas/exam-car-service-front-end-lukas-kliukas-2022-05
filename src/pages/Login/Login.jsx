@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import Footer from '../../components/Footer/Footer';
 import Input from '../../components/Input/Input';
 import Title from '../../components/Title/Title';
 import Wrapper from '../../components/Wrapper/Wrapper';
+import AuthContext from '../../store/authContext';
 import * as S from './Login.style';
 
 const loginUrl = `${process.env.REACT_APP_SERVER_URL}/auth/login `;
 
 const Login = () => {
+  const authCtx = useContext(AuthContext);
   let navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -33,9 +35,10 @@ const Login = () => {
       body: JSON.stringify(registerObj),
     });
     const atsInJs = await resp.json();
-    console.log('atsInJs ===', atsInJs);
 
     if (atsInJs.success) {
+      localStorage.setItem('token', atsInJs.data);
+      authCtx.login();
       navigate('/cars');
     }
     if (atsInJs.success === false) {
@@ -64,9 +67,16 @@ const Login = () => {
       <S.Background>
         <Wrapper>
           <Title>Login with your created user :</Title>
-          {isError && <h3>Please check the form ! Incorrect data sent</h3>}
+          {isError && (
+            <S.ErrorMsg>
+              Incorrect email or password send to server ! Please check the data
+              !
+            </S.ErrorMsg>
+          )}
           {errorMsg.length > 0 ? (
-            <h3>Please check the form ! Incorrect data sent</h3>
+            <S.ErrorMsg>
+              Please check the form ! No email or password is entered !
+            </S.ErrorMsg>
           ) : (
             ''
           )}

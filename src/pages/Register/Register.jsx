@@ -65,9 +65,16 @@ const Register = () => {
       <S.Background>
         <Wrapper>
           <Title>Create your user here :</Title>
-          {isError && <h3>Please check the form ! Incorrect data sent</h3>}
+          {isError && (
+            <S.ErrorMsg>
+              Incorrect email or password send to server ! Please check the data
+              !
+            </S.ErrorMsg>
+          )}
           {errorMsg.length > 0 ? (
-            <h3>Please check the form ! Incorrect data sent</h3>
+            <S.ErrorMsg>
+              Please check the form ! No email or password is entered !
+            </S.ErrorMsg>
           ) : (
             ''
           )}
