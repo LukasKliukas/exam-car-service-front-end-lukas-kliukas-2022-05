@@ -32,12 +32,6 @@ const AddCar = (props) => {
     };
     if (isThereErrors(newPostObj)) {
       alert('All fields are required to fill !');
-      setBrand('');
-      setModel('');
-      setYear('');
-      setNumber('');
-      setOwner('');
-      setPhone('');
       return;
     }
     const resp = await fetch(`${process.env.REACT_APP_SERVER_URL}/cars`, {
@@ -49,7 +43,6 @@ const AddCar = (props) => {
       body: JSON.stringify(newPostObj),
     });
     const atsInJs = await resp.json();
-    console.log(atsInJs);
     if (atsInJs.affectedRows > 0) {
       setMessage(atsInJs.msg);
       setTimeout(function () {
