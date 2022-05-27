@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Navigation from './components/Navigation/Navigation';
@@ -27,6 +27,8 @@ function App() {
     login,
     logout,
   };
+
+  useEffect(() => {}, [isUserLoggedIn]);
 
   return (
     <AuthContext.Provider value={ctxValue}>

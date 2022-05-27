@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import * as S from './Navigation.style';
 import logo from './../../assets/images/Logo-croped.png';
@@ -8,10 +8,14 @@ const Navigation = (props) => {
   const tokenFromProps = props.token;
   const authCtx = useContext(AuthContext);
 
+  const [isDissonnected, setIsDissConnected] = useState(false);
+
   function logout() {
-    localStorage.setItem('token', '');
+    localStorage.removeItem('token');
     authCtx.logout();
+    setIsDissConnected(true);
   }
+  useEffect(() => {}, [isDissonnected]);
 
   return (
     <S.NavigationHolder>
