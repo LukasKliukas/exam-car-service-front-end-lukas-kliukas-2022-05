@@ -2,7 +2,7 @@
 
 ## Who this project is for:
 
-This project is a front-end part of my final exam at Codeacademy academy. With this project you can register/login to a web page that I have created. After that, you can see all cars that are created with appropriate info. Also you can delete a car from the list or add a new one.
+This project is a front-end part of my final exam at Codeacademy academy. With this project you can register/login to a web page that I have created. After that, you can see all cars that are created with appropriate info. Also you can delete a car from the list or add a new one. If you would like, you can logout from the page.
 
 ## How to install this project to use it on your computer:
 
@@ -15,7 +15,7 @@ This project is a front-end part of my final exam at Codeacademy academy. With t
 ## How to start this project:
 
 1. In the project terminal write : npm start
-   // This will start the project on port 3000.
+   // This will start the project on port 3000 and runs the app in the development mode.
 
 ## How to use this project:
 
