@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
 import * as S from './CarsCard.style';
 import Button from './../Button/Button';
 import Title from '../Title/Title';
@@ -17,7 +16,6 @@ const CarsCard = (props) => {
   }
 
   async function deleteFetch(id) {
-    console.log('Button was clicked');
     try {
       const res = await fetch(
         `${process.env.REACT_APP_SERVER_URL}/cars/${id}`,
@@ -26,7 +24,6 @@ const CarsCard = (props) => {
         }
       );
       const data = await res.json();
-      console.log(data);
       return data;
     } catch (err) {
       return err;
