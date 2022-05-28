@@ -8,14 +8,12 @@ const Navigation = (props) => {
   const tokenFromProps = props.token;
   const authCtx = useContext(AuthContext);
 
-  const [isDissonnected, setIsDissConnected] = useState(false);
-
   function logout() {
     localStorage.removeItem('token');
     authCtx.logout();
-    setIsDissConnected(true);
+    window.location.reload();
   }
-  useEffect(() => {}, [isDissonnected]);
+  useEffect(() => {}, [tokenFromProps]);
 
   return (
     <S.NavigationHolder>
