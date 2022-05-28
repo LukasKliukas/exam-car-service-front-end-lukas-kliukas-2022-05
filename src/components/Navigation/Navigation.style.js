@@ -1,6 +1,38 @@
 import styled from 'styled-components';
 
 export const NavWrap = styled.div`
+  @media only screen and (max-width: 300px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 20rem;
+    background: #64686c;
+    & img {
+      width: 10rem;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 60rem;
+    background: #64686c;
+    & img {
+      width: 15rem;
+    }
+  }
+  @media only screen and (max-width: 700px) {
+    margin: 0 2rem;
+    max-width: 60rem;
+    background: #64686c;
+    & img {
+      width: 16rem;
+    }
+  }
   & a {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
       'Lucida Sans', Arial, sans-serif;
@@ -19,7 +51,7 @@ export const NavWrap = styled.div`
     }
   }
   & img {
-    max-width: 20rem;
+    max-width: 18rem;
   }
   display: flex;
   justify-content: space-around;

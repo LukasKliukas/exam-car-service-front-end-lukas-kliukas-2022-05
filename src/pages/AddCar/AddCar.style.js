@@ -12,7 +12,7 @@ export const InfoPopUp = styled.h2`
 `;
 
 export const Background = styled.div`
-  background-image: url('https://i.pinimg.com/originals/dc/19/e9/dc19e9b94a372ebc21ffeb7623d5632a.png');
+  background-image: url('/images/AddCarBG.png');
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
