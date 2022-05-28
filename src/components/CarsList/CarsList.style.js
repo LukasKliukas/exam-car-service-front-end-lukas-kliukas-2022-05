@@ -7,6 +7,12 @@ export const CarsGrid = styled.div`
     gap: 0.5rem;
     margin: 1rem 0;
   }
+  @media only screen and (max-width: 270px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    margin: 1rem 0;
+  }
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 0.5rem;
