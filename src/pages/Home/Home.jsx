@@ -13,19 +13,17 @@ const Home = (props) => {
         },
       });
       const data = await res.json();
+      setData(data.data);
       return data.data;
     } catch (err) {
-      return console.log(err);
+      return err;
     }
   };
   const [data, setData] = useState([]);
 
-  useEffect(
-    () => async () => {
-      setData(await getData());
-    },
-    []
-  );
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <>
