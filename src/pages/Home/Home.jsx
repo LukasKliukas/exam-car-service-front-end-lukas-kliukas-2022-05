@@ -4,6 +4,7 @@ import CarsList from './../../components/CarsList/CarsList';
 import Footer from '../../components/Footer/Footer';
 
 const Home = (props) => {
+  const [data, setData] = useState([]);
   const getData = async () => {
     try {
       const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/cars`, {
@@ -19,7 +20,6 @@ const Home = (props) => {
       return err;
     }
   };
-  const [data, setData] = useState([]);
 
   useEffect(() => {
     getData();
