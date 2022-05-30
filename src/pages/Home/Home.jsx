@@ -15,7 +15,7 @@ const Home = (props) => {
       const data = await res.json();
       return data.data;
     } catch (err) {
-      return err;
+      return console.log(err);
     }
   };
   const [data, setData] = useState([]);
