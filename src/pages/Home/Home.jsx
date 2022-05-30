@@ -3,21 +3,20 @@ import * as S from './Home.style';
 import CarsList from './../../components/CarsList/CarsList';
 import Footer from '../../components/Footer/Footer';
 
-const getData = async () => {
-  try {
-    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/cars`, {
-      headers: {
-        authorization: `Bearer ${localStorage.getItem('token')}`,
-      },
-    });
-    const data = await res.json();
-    return data.data;
-  } catch (err) {
-    return err;
-  }
-};
-
 const Home = (props) => {
+  const getData = async () => {
+    try {
+      const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/cars`, {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+      });
+      const data = await res.json();
+      return data.data;
+    } catch (err) {
+      return err;
+    }
+  };
   const [data, setData] = useState([]);
 
   useEffect(
