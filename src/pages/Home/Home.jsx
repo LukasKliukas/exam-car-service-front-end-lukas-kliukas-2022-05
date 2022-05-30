@@ -9,6 +9,7 @@ const Home = (props) => {
       const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/cars`, {
         headers: {
           authorization: `Bearer ${localStorage.getItem('token')}`,
+          'Content-Type': 'application/json',
         },
       });
       const data = await res.json();
