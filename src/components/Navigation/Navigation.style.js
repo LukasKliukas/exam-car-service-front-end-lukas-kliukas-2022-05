@@ -43,6 +43,7 @@ export const NavWrap = styled.div`
     padding: 0.5rem 1rem;
     text-decoration: none;
     font-weight: bold;
+    transition-duration: 0.4s;
     cursor: pointer;
     :hover {
       background: #ef4623;
